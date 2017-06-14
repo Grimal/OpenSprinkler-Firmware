@@ -327,7 +327,7 @@ typedef enum {
   typedef unsigned int    uint16_t;
   typedef int int16_t;
 
-#else // Hardware defines for RPI/BBB
+#else // Hardware defines for RPI/BBB/CHIP
 
   /** OSPi pin defines */
   #if defined(OSPI)
@@ -347,6 +347,23 @@ typedef enum {
 
   #define PIN_FREE_LIST		{5,6,7,8,9,10,11,12,13,16,18,19,20,21,23,24,25,26}
 
+  /** NextThing.co CHIP Pro pin defines */
+  #elif defined(CHIP)
+
+    #define OS_HW_VERSION   0x01   // Hardware revision, displayed in UI
+    #define PIN_SR_LATCH    131    // shift register latch pin
+    #define PIN_SR_DATA     132    // shift register data pin
+    #define PIN_SR_CLOCK    133    // shift register clock pin
+    #define PIN_SR_OE       134    // shift register output enable pin
+    #define PIN_RAINSENSOR  37     // rain sensor pin
+    #define PIN_FLOWSENSOR  0      // flow sensor pin
+    #define PIN_RF_DATA     0      // RF transmitter pin
+    #define PIN_BUTTON_1    128    // button 1
+    #define PIN_BUTTON_2    129    // button 2
+    #define PIN_BUTTON_3    130    // button 3
+  
+    #define PIN_FREE_LIST	{131,132,133,134,135,136,137,138,139}
+ 
   /** BBB pin defines */
   #elif defined(OSBO)
 
